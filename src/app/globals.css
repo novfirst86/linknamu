@@ -6,7 +6,36 @@
 }
 
 body {
-  color: var(--color-gray-900);
-  background: linear-gradient(160deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%) fixed;
+  position: relative;
+  color: #3b2f2a;
+  background: linear-gradient(165deg, #fff8f1 0%, #fde8d7 45%, #f9d5cf 100%) fixed;
   font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+
+/* 배경에 은은하게 번지는 따뜻한 빛 두 개 */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+body::before {
+  top: -10%;
+  left: -15%;
+  width: 60vmax;
+  height: 60vmax;
+  background: radial-gradient(circle, rgb(255 214 165 / 0.7), transparent 70%);
+}
+
+body::after {
+  right: -20%;
+  bottom: -15%;
+  width: 55vmax;
+  height: 55vmax;
+  background: radial-gradient(circle, rgb(244 172 183 / 0.55), transparent 70%);
 }

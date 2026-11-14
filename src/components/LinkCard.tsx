@@ -6,12 +6,17 @@ export default function LinkCard({ link }: { link: LinkItem }) {
       href={`/go/${link.id}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex w-full items-center justify-between rounded-2xl border border-gray-200 bg-white px-5 py-4 font-semibold text-gray-800 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-400 hover:text-sky-600 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 active:translate-y-0"
+      className="group relative flex w-full items-center justify-center rounded-2xl border border-white/70 bg-white/40 px-5 py-4 font-semibold text-stone-700 shadow-[0_4px_20px_-6px_rgb(160_80_50/0.18)] backdrop-blur-md transition duration-300 ease-out hover:-translate-y-0.5 hover:border-white hover:bg-white/65 hover:text-stone-900 hover:shadow-[0_10px_28px_-8px_rgb(160_80_50/0.28)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 active:translate-y-0"
     >
-      <span>{link.label}</span>
+      <span className="flex items-center gap-2.5">
+        <span aria-hidden="true" className="text-lg leading-none">
+          {link.emoji}
+        </span>
+        <span>{link.label}</span>
+      </span>
       <span
         aria-hidden="true"
-        className="text-gray-400 transition group-hover:translate-x-0.5 group-hover:text-sky-500"
+        className="absolute right-5 text-stone-400 transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-orange-500"
       >
         ↗
       </span>
