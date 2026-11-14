@@ -1,4 +1,4 @@
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 import ProfileHeader from "@/components/ProfileHeader";
 import { links, profile } from "@/data/profile";
 
@@ -14,13 +14,7 @@ export default function Home() {
         {/* 프로필 + 링크 묶음을 박스 세로 중앙보다 살짝 위(시각적 중심)에 둔다 */}
         <div className="flex flex-1 flex-col justify-center gap-12 py-6 sm:pb-16">
           <ProfileHeader profile={profile} />
-          <ul className="flex flex-col gap-3.5">
-            {links.map((link) => (
-              <li key={link.id}>
-                <LinkCard link={link} />
-              </li>
-            ))}
-          </ul>
+          <LinkList links={links} />
         </div>
         <span
           aria-hidden="true"
